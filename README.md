@@ -7,17 +7,20 @@ Understanding TriMet
 TriMet operates a public transportation network in and around Portland, Oregon. Our focus is on TriMet's GPS breadcrumb data, which records the geographical positions of all buses in the system at 5-second intervals. This rich dataset provides a foundation for in-depth analysis of the city's bus operations.
 
 Key functionalities include:
+
 - Consuming API to fetch TriMet GPS breadcrumbs.
 - Producing and consuming data to/from a Kafka topic.
 - Automating data processing and notifications via a Slack bot.
 - Transforming data using Pandas and storing it in PostgreSQL.
 - Visualizing SQL queries of the data on Mapbox.
 
- Requirements
+Requirements
+
 - Python 3.10.9 (Conda base environment)
 - Additional Python libraries as listed in `requirements.txt`
 
 Installation
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/Mahshiiiiid/CRR_Final_Project.git
@@ -32,18 +35,25 @@ Installation
    ```
 
 Configuration
+
 - Configure the environment variables as needed in `.env` file.
+  - You will need an OAuth token from the Slack API. You can get started here: https://api.slack.com/
+  - You will also need the name of a Slack channel you want notifications from this program to go to.
 - Ensure proper setup for Apache Kafka and PostgreSQL.
+  - https://kafka.apache.org/documentation/
+  - https://www.postgresql.org/about/
 
 Running the Application
 Execute the following scripts in order to set up and run the data pipeline:
 
 1. Gather and Produce Data:
+
    ```bash
    python gather_produce.py <path to getting_started.ini>
    ```
 
-2. Consume Data:**
+2. Consume Data:\*\*
+
    - For initial consumption:
      ```bash
      python consumer.py <path to getting_started.ini>
@@ -53,7 +63,8 @@ Execute the following scripts in order to set up and run the data pipeline:
      python new_consumer.py <path to getting_started.ini>
      ```
 
-3. Load Data to PostgreSQL:**
+3. Load Data to PostgreSQL:\*\*
+
    - For trips data:
      ```bash
      python load_to_postgres_trips.py
@@ -63,17 +74,19 @@ Execute the following scripts in order to set up and run the data pipeline:
      python load_to_postgres.py
      ```
 
-4. Data Transformation and Validation:**
+4. Data Transformation and Validation:\*\*
+
    ```bash
    python validate_transform.py
    ```
 
-5. Initiating Database Load:**
+5. Initiating Database Load:\*\*
+
    ```bash
    python initiate_db_load.py
    ```
 
-6. Server and Visualization:**
+6. Server and Visualization:\*\*
    - Start the server:
      ```bash
      python server.py
@@ -82,9 +95,11 @@ Execute the following scripts in order to set up and run the data pipeline:
 
 Testing
 Run the following command to execute tests (if any):
+
 ```bash
 python -m unittest
 ```
+
 Additional Project Details
 
 Data Source: TriMet GPS breadcrumb and stop event data.
@@ -98,5 +113,3 @@ Contributions to the Data_Eng_DTM project are welcome. Please follow the standar
 
 Contact
 For any queries or contributions, please contact mghasemi@pdx.edu.
-
-

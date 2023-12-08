@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # Check if the file path is provided as a command-line argument
     if len(sys.argv) < 2:
         # Default file path if no argument is provided
-        file_path = "/Users/mahshid/Downloads/test_data.csv"
+        file_path = "/resources/test_data/test_data.csv"
     else:
         file_path = sys.argv[1]
 
@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     # Optionally, save the transformed data back to a file
     # You can change the output file path as needed.
-    output_file_path = f"/Users/mahshid/Downloads/transformed_data_{get_date_str()}.csv"
+    output_file_path = f"/resources/data_archive/transformed_data_{get_date_str()}.csv"
     transformed_df.to_csv(output_file_path)
     print(f"Data transformed and saved to {output_file_path}")
 
