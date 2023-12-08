@@ -98,5 +98,5 @@ def main(filename):
         sys.exit(f"Error in processing: {e}")
 
 if __name__ == "__main__":
-    filename = sys.argv[1] if len(sys.argv) > 1 else f"/home/dtm-project/consumed_data/trips_{get_date_str()}.csv"
+    filename = sys.argv[1] if len(sys.argv) > 1 else f"/resources/consumed_data/trips_{get_date_str()}.csv"
     main(filename)
